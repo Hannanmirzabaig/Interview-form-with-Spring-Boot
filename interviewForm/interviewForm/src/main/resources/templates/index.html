@@ -1,0 +1,220 @@
+<html>
+    <head>
+       <style>
+		*, *:before, *:after {
+		 
+		  box-sizing: border-box;
+		}
+		
+		body {
+		  font-family: 'Nunito', sans-serif;
+		  color: rgb(0, 0, 0);
+		}
+		
+		form {
+		  max-width: 300px;
+		  margin: 10px auto;
+		  padding: 10px 20px;
+		  background: rgb(180, 182, 172);
+		  border-radius: 8px;
+		}
+		
+		h1 {
+		  margin: 0 0 30px 0;
+		  text-align: center;
+		  color:orangered;
+		}
+		
+		input[type="text"],
+		input[type="password"],
+		input[type="date"],
+		input[type="datetime"],
+		input[type="email"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="time"],
+		input[type="url"],
+		textarea,
+		select {
+		  background: rgba(255,255,255,0.1);
+		  border: none;
+		  font-size: 16px;
+		  height: auto;
+		  margin: 0;
+		  outline: 0;
+		  padding: 15px;
+		  width: 100%;
+		  background-color: #e8eeef;
+		  color: #8a97a0;
+		  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+		  margin-bottom: 30px;
+		}
+		
+		input[type="radio"],
+		input[type="checkbox"] {
+		  margin: 0 4px 8px 0;
+		}
+		
+		select {
+		  padding: 6px;
+		  height: 32px;
+		  border-radius: 2px;
+		}
+		
+		button {
+		  padding: 19px 39px 18px 39px;
+		  color: #FFF;
+		  background-color: #4bc970;
+		  font-size: 18px;
+		  text-align: center;
+		  font-style: normal;
+		  border-radius: 5px;
+		  width: 100%;
+		  border: 1px solid #3ac162;
+		  border-width: 1px 1px 3px;
+		  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+		  margin-bottom: 10px;
+		}
+		
+		fieldset {
+		  margin-bottom: 30px;
+		  border: none;
+		}
+		
+		legend {
+		  font-size: 1.4em;
+		  margin-bottom: 10px;
+		  color:darkblue;
+		}
+		
+		label {
+		  display: block;
+		  margin-bottom: 8px;
+		}
+		
+		label.light {
+		  font-weight: 300;
+		  display: inline;
+		}
+		
+		.number {
+		  background-color: #5fcf80;
+		  color: #fff;
+		  height: 30px;
+		  width: 30px;
+		  display: inline-block;
+		  font-size: 0.8em;
+		  margin-right: 4px;
+		  line-height: 30px;
+		  text-align: center;
+		  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+		  border-radius: 100%;
+		}
+		
+		@media screen and (min-width: 480px) {
+		
+		  form {
+		    max-width: 480px;
+		  }
+		
+		}
+
+	   </style>
+	   
+	   
+    </head>
+    <body>
+      
+      <form action="hannan/save" method="post">
+      
+		             <h1> Sign Up </h1>
+        
+        <fieldset>
+          
+          <legend><span class="number">1</span> Your Basic Info</legend>
+		  
+		  
+        
+          <label for="user-name">User Name :</label>
+          <input type="text" id="user-name" name="name" placeholder="enter the name" minlength="4" maxlength="16">
+        
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" placeholder="enter the email">
+		  
+		  <label for="phone">Phone Number:</label>
+		  <input type="tel" id="phone" name="contact" placeholder="1234567890" pattern="[0-9]{10}" required>
+		
+		  <!--
+			inside inpute [id] and inside label [for] should be same because
+			when i clicked the contact name then cursor automatically inside the contact field
+		  <label for="contact">Contact:</label>
+		  <input type="tel"  name="contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+		 -->
+		  <label for="address">Address :</label>
+		  <input type="text" id="address" placeholder="enter the address" name="address">
+       
+        
+          <label>Age:</label>
+          <input type="radio"  name="user_age" value="Under 18"><label  class="light">Under 18</label><br>
+          <input type="radio"  name="user_age" value="Above 18"><label  class="light">Above 18</label>
+         
+        </fieldset>
+        <fieldset>  
+        
+          <legend><span class="number">2</span> Your Profile</legend>
+          
+         <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio" maxlength="50" placeholder="you can write upto 50 letter"></textarea>
+        
+       
+        
+         <label for="job">Job Role:</label>
+          <select id="job" name="job_role" 		 >
+            <optgroup label="Web">
+				<option value="Java_developer">Java Developer</option>
+              <option value="frontend_developer">Front-End Developer</option>
+              <option value="php_developer">PHP Developer</option>
+              <option value="python_developer">Python Developer</option>
+              <option value="rails_developer">Rails Developer</option>
+              <option value="web_designer">Web Designer</option>
+              <option value="wordpress_developer">Wordpress Developer</option>
+            </optgroup>
+			
+            <optgroup label="Mobile">
+              <option value="android_developer">Android Developer</option>
+              <option value="ios_developer">IOS Developer</option>
+              <option value="mobile_designer">Mobile Designer</option>
+            </optgroup>
+			
+            <optgroup label="Business">
+              <option value="business_owner">Business Owner</option>
+              <option value="freelancer">Freelancer</option>
+            </optgroup>
+          </select>
+          
+          <label>Interests:</label>
+          <input type="checkbox" value="Development  " name="user_interest"><label class="light" >Development</label><br>
+          <input type="checkbox"  value="Design  " name="user_interest"><label class="light" >Design</label><br>
+          <input type="checkbox"  value="Business " name="user_interest"><label class="light" >Business</label>
+         <br><br>
+		
+		 <legend><label for="appt"><span class="number">3</span>Choose a time for your meeting:</label></legend>
+		 <small>You Can Schedule the Interview Between 9am to 6pm</small>
+		  <input type="datetime-local" id="appt" name="date" min="09:00" max="18:00" required />
+		  
+		  
+	 <!-- 		  <label for="appt">Choose a time for your meeting:</label>
+	 <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+	 <small>Office hours are 9am to 6pm</small>-->
+         </fieldset>
+       
+       <button type="submit" value="submit">Sign Up</button>
+		
+        
+       </form>
+        </div>
+      </div>
+      
+    </body>
+</html>

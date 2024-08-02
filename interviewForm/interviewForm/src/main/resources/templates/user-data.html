@@ -1,0 +1,50 @@
+
+<html xmlns:th="https://thymeleaf.org"> 
+	<style>
+		body{
+			background-color: azure;
+		}
+	   #container {
+				  max-width: 400px;
+				  margin: 10px auto;
+				  padding: 10px 20px;
+				  background: rgb(182, 182, 182);
+				  border-radius: 8px;
+				}
+				h1{
+					font-size: 40px;
+					font-weight: bold;
+					font-style: italic;
+					color:darkgreen;
+					text-align: center;
+				}
+		p{
+			color: rgb(0, 0, 64);
+			font-family: cursive;
+			font-size: 20px;
+		}
+		span{
+			color:rgb(255, 128, 0);
+		}
+	</style>
+
+   <body>
+   <div id="container">
+               <h1>Form Submission Result</h1>
+
+   <p>User Name: <span th:text="${user.name}"></span></p>
+   <p>User Email: <span th:text="${user.email}"></span></p>
+   <p>User Addresss: <span th:text="${user.address}"></span></p>
+   <p>User Contact: <span th:text="${user.contact}"></span></p>
+   <p>User Age: <span th:text="${user.user_age}"></span></p>
+   <p>User Bio: <span th:text="${user.bio}"></span></p>
+   <p>User Job Role: <span th:text="${user.job_role}"></span></p>
+   <p>User Interests: <span th:each="interest : ${user.user_interest}" th:text=" ${interest} "></span></p>
+   <p>Interview Time: <span th:text="${user.date}"></span></p>
+   
+              <h1>Your Form Submitted </h1>
+			  <h1>THANK YOU !</h1>
+  </div>
+  </body>
+    
+</html>  
